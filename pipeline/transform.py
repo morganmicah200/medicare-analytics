@@ -3,7 +3,7 @@ import pandas as pd
 def transform_data(df):
     print("Starting transformation...")
 
-    # Rename columns to clean readable names
+    # Rename cryptic CMS column names to clean readable names
     df = df.rename(columns={
         'Rndrng_NPI': 'provider_npi',
         'Rndrng_Prvdr_Last_Org_Name': 'provider_last_org_name',
@@ -35,7 +35,8 @@ def transform_data(df):
         'Avg_Mdcr_Stdzd_Amt': 'avg_medicare_standardized_amt'
     })
 
-    # Convert numeric columns
+    # Convert financial and volume columns from strings to numbers
+    # errors='coerce' turns any unparseable values into NaN instead of crashing
     numeric_cols = [
         'total_beneficiaries',
         'total_services',
@@ -48,7 +49,7 @@ def transform_data(df):
     for col in numeric_cols:
         df[col] = pd.to_numeric(df[col], errors='coerce')
 
-    # Clean string columns
+    # Strip whitespace and standardize text to uppercase for consistency
     string_cols = [
         'provider_npi',
         'provider_last_org_name',
@@ -63,10 +64,10 @@ def transform_data(df):
     for col in string_cols:
         df[col] = df[col].str.strip().str.upper()
 
-    # Drop rows missing critical fields
+    # Drop rows missing critical fields needed for analysis
     df = df.dropna(subset=['provider_npi', 'hcpcs_code', 'avg_medicare_payment'])
 
-    # Convert year to integer
+    # Convert year to integer for proper sorting and filtering
     df['year'] = df['year'].astype(int)
 
     print(f"Transformation complete. {len(df)} rows remaining.")
