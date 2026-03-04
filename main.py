@@ -12,7 +12,7 @@ def run_pipeline():
     for year, filename in FILES.items():
         print(f"\nProcessing {year}...")
 
-        # Step 1: Ingest one year at a time to manage memory
+        # Step 1: Ingest
         print(f"[1/3] Ingesting {year} data...")
         df = load_raw_data(filename, year)
 

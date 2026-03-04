@@ -17,3 +17,8 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# dbt
+medicare_dbt/target/
+medicare_dbt/dbt_packages/
+medicare_dbt/logs/
