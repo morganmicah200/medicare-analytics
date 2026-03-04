@@ -4,10 +4,8 @@ import os
 # Path to raw CSV files
 RAW_DATA_PATH = "data/raw"
 
-# Map each year to its corresponding CSV file
+# Only loading 2023 data
 FILES = {
-    "2021": "claims_2021.csv",
-    "2022": "claims_2022.csv",
     "2023": "claims_2023.csv"
 }
 
