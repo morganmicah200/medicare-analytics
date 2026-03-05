@@ -61,6 +61,7 @@ ORDER BY avg_medicare_payment DESC;
 -- Top 20 providers by total services billed
 -- Identifies the highest volume providers in the Medicare system
 -- Joins to dim_provider to get provider name and specialty
+-- High volume providers are often large labs, imaging centers, or high demand specialists
 SELECT 
     f.provider_npi,
     p.provider_last_org_name,
