@@ -22,3 +22,4 @@ Thumbs.db
 medicare_dbt/target/
 medicare_dbt/dbt_packages/
 medicare_dbt/logs/
+logs/

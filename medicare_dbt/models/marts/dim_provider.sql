@@ -3,7 +3,7 @@ with stg as (
 )
 
 select distinct
-    provider_npi,
+     provider_npi,
     provider_last_org_name,
     provider_first_name,
     provider_mi,
@@ -11,6 +11,7 @@ select distinct
     provider_entity_code,
     provider_street1,
     provider_street2,
+    provider_state,
     provider_type,
     medicare_participating
 from stg
