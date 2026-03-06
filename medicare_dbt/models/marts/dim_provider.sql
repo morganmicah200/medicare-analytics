@@ -1,18 +1,26 @@
 with stg as (
     select * from {{ ref('stg_claims_clean') }}
+),
+
+ranked as (
+    select
+        provider_npi,
+        provider_last_org_name,
+        provider_first_name,
+        provider_type,
+        provider_state,
+        medicare_participating,
+        ROW_NUMBER() OVER (PARTITION BY provider_npi ORDER BY provider_npi) as rn
+    from stg
+    where provider_npi is not null
 )
 
-select distinct
-     provider_npi,
+select
+    provider_npi,
     provider_last_org_name,
     provider_first_name,
-    provider_mi,
-    provider_credentials,
-    provider_entity_code,
-    provider_street1,
-    provider_street2,
-    provider_state,
     provider_type,
+    provider_state,
     medicare_participating
-from stg
-where provider_npi is not null
+from ranked
+where rn = 1
