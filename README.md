@@ -194,8 +194,6 @@ The Power BI dashboard features an interactive state filter that updates all vis
 - Avg Medicare payment by provider specialty
 - KPI cards: avg reimbursement, state rank, total services, total beneficiaries, avg submitted charge
 
-> Dashboard screenshots coming soon.
-
 ---
 
 ## Data Source
