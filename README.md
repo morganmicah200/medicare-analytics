@@ -181,6 +181,12 @@ Connect Power BI Desktop to your PostgreSQL instance:
 
 The Power BI dashboard features an interactive state filter that updates all visuals dynamically.
 
+**Florida:**
+![Dashboard Florida](assets/Florida_MA2023.png)
+
+**California:**
+![Dashboard California](assets/California_MA2023.png)
+
 **Visuals:**
 - Medicare payment map by state
 - Medicare paid vs billing gap (donut chart)
