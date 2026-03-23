@@ -187,7 +187,7 @@ The Power BI dashboard features an interactive state filter that updates all vis
 **California:**
 ![Dashboard California](assets/California_MA2023.png)
 
-**Visuals:**
+**Dashboard Visuals:**
 - Medicare payment map by state
 - Medicare paid vs billing gap (donut chart)
 - Top procedures by volume
