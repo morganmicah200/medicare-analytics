@@ -29,7 +29,7 @@ def test_database_connection():
 
 
 def test_correct_database():
-    """Verify we are connected to the right database."""
+    """Verify we are connected."""
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT current_database();")
